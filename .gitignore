@@ -4,3 +4,5 @@ _notes/
 docs/.pdca-*
 *.sh
 GOOGLE_MAPS_API_SETUP.md
+.playwright-mcp/
+scroll-test-after.png
