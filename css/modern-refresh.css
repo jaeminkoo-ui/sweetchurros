@@ -53,11 +53,41 @@ body {
 }
 
 .main-nav.dark {
-  background: rgba(44, 24, 16, 0.85) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
 }
 
-.main-nav.js-transparent {
+.main-nav.dark .inner-nav ul > li > a {
+  color: var(--color-text) !important;
+}
+
+.main-nav.dark .inner-nav ul > li > a:hover,
+.main-nav.dark .inner-nav ul > li > a.active {
+  color: var(--color-gold) !important;
+}
+
+.main-nav.dark .logo,
+.main-nav.dark a.logo:hover {
+  color: var(--color-text) !important;
+}
+
+.main-nav.dark.transparent {
   background: transparent !important;
+  box-shadow: none !important;
+}
+
+.main-nav.dark.transparent .inner-nav ul > li > a {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.main-nav.dark.transparent .inner-nav ul > li > a:hover,
+.main-nav.dark.transparent .inner-nav ul > li > a.active {
+  color: #fff !important;
+}
+
+.main-nav.dark.transparent .logo,
+.main-nav.dark.transparent a.logo:hover {
+  color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .main-nav.js-no-transparent-white {
@@ -65,6 +95,19 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
+}
+
+.main-nav.js-no-transparent-white .inner-nav ul li a {
+  color: var(--color-text) !important;
+}
+
+.main-nav.js-no-transparent-white .inner-nav ul li a:hover {
+  color: var(--color-gold) !important;
+  opacity: 1;
+}
+
+.main-nav.js-no-transparent-white .logo {
+  color: var(--color-text) !important;
 }
 
 .inner-nav ul li a {
@@ -328,7 +371,7 @@ body {
 .table > tbody > tr > td.align-right {
   font-family: var(--font-body);
   font-weight: 700;
-  color: var(--color-gold-dark);
+  color: var(--color-text);
   font-size: 16px;
   white-space: nowrap;
 }
