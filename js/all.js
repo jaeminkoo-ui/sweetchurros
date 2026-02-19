@@ -6,13 +6,21 @@
      Scripts initialization
      --------------------------------------------- */
     
+    function dismissLoader() {
+        if (window._loaderDismissed) return;
+        window._loaderDismissed = true;
+        $(".page-loader div").fadeOut();
+        $(".page-loader").delay(200).fadeOut("slow");
+    }
+
+    setTimeout(dismissLoader, 4000);
+
     $(window).load(function(){
         
         // Page loader
         
         $("body").imagesLoaded(function(){
-            $(".page-loader div").fadeOut();
-            $(".page-loader").delay(200).fadeOut("slow");
+            dismissLoader();
         });
         
         
