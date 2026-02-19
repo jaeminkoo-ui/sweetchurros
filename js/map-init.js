@@ -12,7 +12,7 @@
         wrapper.style.overflow = 'hidden';
 
         var iframe = document.createElement('iframe');
-        iframe.src = 'https://maps.google.com/maps?q=11+W+32nd+St,+New+York,+NY+10001&z=16&hl=en&output=embed';
+        iframe.src = 'https://maps.google.com/maps?ll=40.74857,-73.98740&z=16&hl=en&output=embed';
         iframe.width = '100%';
         iframe.height = '100%';
         iframe.style.cssText = 'border:0;filter:grayscale(1) contrast(0.9) brightness(1.1);';
@@ -21,9 +21,9 @@
         iframe.title = 'Sweet Churros Location';
         wrapper.appendChild(iframe);
 
-        var cover = document.createElement('div');
-        cover.style.cssText = 'position:absolute;top:0;left:0;width:300px;height:130px;background:linear-gradient(160deg,#e6e6e6 50%,#eaeaea 65%,#eeeeee 78%,transparent 95%);pointer-events:none;z-index:10;';
-        wrapper.appendChild(cover);
+        var marker = document.createElement('div');
+        marker.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;background:#C8973E;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,0.3);pointer-events:none;z-index:10;';
+        wrapper.appendChild(marker);
     }
 
     if (document.readyState === 'loading') {
