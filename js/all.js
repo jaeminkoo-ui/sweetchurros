@@ -6,38 +6,34 @@
      Scripts initialization
      --------------------------------------------- */
     
-    function dismissLoader() {
-        if (window._loaderDismissed) return;
-        window._loaderDismissed = true;
+    function initPage() {
+        if (window._pageInitialized) return;
+        window._pageInitialized = true;
+
         $(".page-loader div").fadeOut();
         $(".page-loader").delay(200).fadeOut("slow");
-    }
 
-    setTimeout(dismissLoader, 4000);
-
-    $(window).load(function(){
-        
-        // Page loader
-        
-        $("body").imagesLoaded(function(){
-            dismissLoader();
-        });
-        
-        
         initWorkFilter();
         init_scroll_navigate();
-        
+
         $(window).trigger("scroll");
         $(window).trigger("resize");
-        
-        // Hash menu forwarding
+
         if ((window.location.hash) && ($(window.location.hash).length)){
             var hash_offset = $(window.location.hash).offset().top;
             $("html, body").animate({
                 scrollTop: hash_offset
             });
         }
-        
+    }
+
+    setTimeout(initPage, 4000);
+
+    $(window).load(function(){
+        $("body").imagesLoaded(function(){
+            initPage();
+        });
+        initPage();
     });
     
     $(document).ready(function(){
