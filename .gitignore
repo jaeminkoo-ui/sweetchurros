@@ -1,4 +1,10 @@
 .DS_Store
+assets/churro/
+assets/k-dog/
+menu-demo.html
+menu-churro-preview.png
+menu-churro-bottom.png
+menu-kdog-preview.png
 Thumbs.db
 _notes/
 docs/.pdca-*

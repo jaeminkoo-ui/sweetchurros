@@ -34,24 +34,32 @@ $(document).ready(function(){
                 'userMessage': user_message
             };
             
-            //Ajax post data to server
-            $.post('contact_reservations.php', post_data, function(response){
-            
-                //load json data from server and output message     
-                if (response.type == 'error') {
-                    output = '<div class="error">' + response.text + '</div>';
+            $("#submit_btn").prop('disabled', true).text('SENDING...');
+
+            $.ajax({
+                url: '/api/contact',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(post_data),
+                dataType: 'json',
+                success: function(response) {
+                    if (response.type == 'error') {
+                        output = '<div class="error">' + response.text + '</div>';
+                    } else {
+                        output = '<div class="success">' + response.text + '</div>';
+                        $('#contact_form input').val('');
+                        $('#contact_form textarea').val('');
+                    }
+                    $("#result").hide().html(output).slideDown();
+                },
+                error: function() {
+                    output = '<div class="error">Failed to send. Please try again.</div>';
+                    $("#result").hide().html(output).slideDown();
+                },
+                complete: function() {
+                    $("#submit_btn").prop('disabled', false).text('SEND');
                 }
-                else {
-                
-                    output = '<div class="success">' + response.text + '</div>';
-                    
-                    //reset values in all input fields
-                    $('#contact_form input').val('');
-                    $('#contact_form textarea').val('');
-                }
-                
-                $("#result").hide().html(output).slideDown();
-            }, 'json');
+            });
             
         }
         
