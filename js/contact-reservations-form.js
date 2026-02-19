@@ -51,10 +51,12 @@ $(document).ready(function(){
                         $('#contact_form textarea').val('');
                     }
                     $("#result").hide().html(output).slideDown();
+                    setTimeout(function(){ $("#result").slideUp(); }, 5000);
                 },
                 error: function() {
                     output = '<div class="error">Failed to send. Please try again.</div>';
                     $("#result").hide().html(output).slideDown();
+                    setTimeout(function(){ $("#result").slideUp(); }, 5000);
                 },
                 complete: function() {
                     $("#submit_btn").prop('disabled', false).text('SEND');
