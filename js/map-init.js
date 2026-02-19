@@ -84,4 +84,4 @@ function showMapFallback() {
 
 setTimeout(function() {
     if (!mapLoaded) showMapFallback();
-}, 3000);
+}, 8000);
