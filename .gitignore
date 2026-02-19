@@ -6,3 +6,4 @@ docs/.pdca-*
 GOOGLE_MAPS_API_SETUP.md
 .playwright-mcp/
 scroll-test-after.png
+map-final.png
