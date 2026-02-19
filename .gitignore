@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+_notes/
+docs/.pdca-*
+*.sh
+GOOGLE_MAPS_API_SETUP.md

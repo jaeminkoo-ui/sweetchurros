@@ -1,0 +1,622 @@
+/* ==========================================================
+   Sweet Churros - Modern Design Refresh (2026)
+   Warm, artisanal aesthetic for a handcrafted churro shop
+   ========================================================== */
+
+:root {
+  --color-cream: #FDF6EC;
+  --color-warm-white: #FFFAF5;
+  --color-gold: #C8973E;
+  --color-gold-light: #E8C87A;
+  --color-gold-dark: #A67B2E;
+  --color-brown: #3D2B1F;
+  --color-brown-light: #6B4F3A;
+  --color-brown-medium: #4A3728;
+  --color-text: #2C1810;
+  --color-text-light: #6B5B50;
+  --color-border: #E8DDD0;
+  --color-bg-section: #FAFAF7;
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Inter', 'Open Sans', sans-serif;
+  --transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ==========================================================
+   Page Loader
+   ========================================================== */
+
+.page-loader {
+  background: var(--color-cream) !important;
+}
+
+
+/* ==========================================================
+   Navigation
+   ========================================================== */
+
+.main-nav {
+  transition: var(--transition);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.main-nav.dark {
+  background: rgba(44, 24, 16, 0.85) !important;
+}
+
+.main-nav.js-transparent {
+  background: transparent !important;
+}
+
+.main-nav.js-no-transparent-white {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
+}
+
+.inner-nav ul li a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.inner-nav ul li a:hover {
+  opacity: 0.7;
+}
+
+.inner-nav ul li a .btn {
+  font-family: var(--font-body);
+}
+
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+
+.btn-mod {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: var(--transition);
+  border-width: 2px;
+}
+
+.btn-mod:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-mod.btn-w {
+  border-color: #fff;
+}
+
+.btn-mod.btn-w:hover {
+  background: #fff;
+  color: var(--color-brown) !important;
+}
+
+.btn-mod.btn-circle {
+  border-radius: 50px !important;
+}
+
+.btn-mod.btn-gray {
+  background: var(--color-brown);
+  color: #fff;
+  border-color: var(--color-brown);
+}
+
+.btn-mod.btn-gray:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: #fff;
+}
+
+
+/* ==========================================================
+   Hero Section
+   ========================================================== */
+
+.home-section {
+  position: relative;
+}
+
+.home-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  pointer-events: none;
+}
+
+.home-text h1,
+.hs-line-14 {
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  letter-spacing: 0.15em !important;
+}
+
+.hs-line-14 small {
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  font-size: 40%;
+  display: block;
+  margin-top: 15px;
+  opacity: 0.85;
+}
+
+.home-text .hs-line-3 {
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  opacity: 0.8;
+}
+
+.scroll-down {
+  z-index: 10;
+}
+
+.scroll-down-icon {
+  transition: var(--transition);
+}
+
+.scroll-down:hover .scroll-down-icon {
+  transform: translateY(4px);
+}
+
+
+/* ==========================================================
+   About Section
+   ========================================================== */
+
+#about {
+  background: var(--color-warm-white);
+}
+
+#about .lead {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  line-height: 1.6;
+  color: var(--color-brown);
+  font-weight: 400;
+}
+
+#about p:not(.lead) {
+  color: var(--color-text-light);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+#about img {
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+#about img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================================
+   Gallery / Image Carousel
+   ========================================================== */
+
+.image-carousel .post-prev-img {
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.image-carousel .post-prev-img img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-carousel .post-prev-img:hover img {
+  transform: scale(1.05);
+}
+
+
+/* ==========================================================
+   Section Titles
+   ========================================================== */
+
+.section-title {
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  color: var(--color-brown);
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-gold);
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+
+/* ==========================================================
+   Menu Section
+   ========================================================== */
+
+#menu {
+  background: var(--color-bg-section);
+}
+
+#menu .section-text {
+  color: var(--color-text-light);
+}
+
+.tpl-minimal-tabs {
+  border-bottom-color: var(--color-border) !important;
+}
+
+.tpl-minimal-tabs > li > a {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  color: var(--color-text-light) !important;
+  transition: var(--transition);
+  padding: 8px 20px !important;
+  border-radius: 4px 4px 0 0;
+}
+
+.tpl-minimal-tabs > li > a:hover {
+  color: var(--color-brown) !important;
+  background: rgba(200, 151, 62, 0.08);
+}
+
+.tpl-minimal-tabs > li.active > a,
+.tpl-minimal-tabs > li.active > a:hover {
+  color: var(--color-brown) !important;
+  border-bottom-color: var(--color-gold) !important;
+}
+
+.table > thead > tr > th {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-brown);
+  border-bottom: 2px solid var(--color-gold);
+  padding: 12px 8px;
+  letter-spacing: 0.02em;
+}
+
+.table > tbody > tr > td {
+  padding: 14px 8px;
+  border-top-color: var(--color-border);
+  vertical-align: middle;
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+.table > tbody > tr:hover > td {
+  background: rgba(200, 151, 62, 0.06);
+}
+
+.table > tbody > tr > td .small {
+  color: var(--color-text-light);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.table > tbody > tr > td.align-right {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--color-gold-dark);
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+
+/* ==========================================================
+   Online Order Section
+   ========================================================== */
+
+#onlineorder {
+  position: relative;
+}
+
+#onlineorder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(61, 43, 31, 0.75), rgba(44, 24, 16, 0.85));
+  z-index: 0;
+}
+
+#onlineorder .container {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-heading {
+  font-family: var(--font-heading) !important;
+  font-weight: 600;
+}
+
+#onlineorder .btn-mod.btn-w.btn-round {
+  border-radius: 50px !important;
+  padding: 12px 35px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  margin: 5px;
+  border-width: 2px;
+}
+
+
+/* ==========================================================
+   Contact Section
+   ========================================================== */
+
+#reservations {
+  background: var(--color-warm-white);
+}
+
+#reservations .section-title {
+  color: var(--color-brown);
+}
+
+.contact-form .form-control {
+  border: 2px solid var(--color-border) !important;
+  border-radius: 8px !important;
+  padding: 14px 18px !important;
+  font-family: var(--font-body) !important;
+  font-size: 12px !important;
+  color: var(--color-text) !important;
+  background: #fff;
+  transition: var(--transition);
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 0 0 3px rgba(200, 151, 62, 0.15) !important;
+  outline: none;
+}
+
+.contact-form .form-control::placeholder {
+  color: #B0A090;
+}
+
+.contact-form textarea.form-control {
+  border-radius: 8px !important;
+  min-height: 150px;
+  resize: vertical;
+  font-family: var(--font-body) !important;
+  font-size: 12px !important;
+}
+
+.submit_btn {
+  background: var(--color-brown) !important;
+  color: #fff !important;
+  border-color: var(--color-brown) !important;
+  border-radius: 50px !important;
+  padding: 12px 40px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  transition: var(--transition);
+}
+
+.submit_btn:hover {
+  background: var(--color-gold) !important;
+  border-color: var(--color-gold) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 151, 62, 0.3);
+}
+
+
+/* ==========================================================
+   Google Maps
+   ========================================================== */
+
+.google-map {
+  border-top: none;
+}
+
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+
+.footer {
+  background: var(--color-cream) !important;
+}
+
+.contact-item .ci-icon {
+  color: var(--color-gold) !important;
+}
+
+.contact-item .ci-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--color-brown);
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+.contact-item .ci-text {
+  color: var(--color-text-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-item .ci-text a {
+  color: var(--color-gold-dark);
+  transition: var(--transition);
+}
+
+.contact-item .ci-text a:hover {
+  color: var(--color-gold);
+}
+
+.footer hr {
+  border-color: var(--color-border);
+}
+
+.footer-social-links a {
+  transition: var(--transition);
+  color: var(--color-brown-light) !important;
+}
+
+.footer-social-links a:hover {
+  color: var(--color-gold) !important;
+  transform: translateY(-3px);
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--color-text-light);
+}
+
+.footer-copy a {
+  color: var(--color-text-light) !important;
+  transition: var(--transition);
+}
+
+.footer-copy a:hover {
+  color: var(--color-gold) !important;
+}
+
+.footer-made {
+  color: var(--color-text-light);
+  font-size: 13px;
+}
+
+
+/* ==========================================================
+   Scroll to Top
+   ========================================================== */
+
+.link-to-top {
+  background: var(--color-brown) !important;
+  transition: var(--transition);
+  border-radius: 50% !important;
+}
+
+.link-to-top:hover {
+  background: var(--color-gold) !important;
+}
+
+
+/* ==========================================================
+   Global Enhancements
+   ========================================================== */
+
+::selection {
+  background: var(--color-gold);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: var(--color-gold);
+  color: #fff;
+}
+
+img {
+  image-rendering: auto;
+}
+
+.page-section {
+  transition: opacity 0.5s ease;
+}
+
+.lead {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.form-tip {
+  color: var(--color-text-light);
+  font-size: 13px;
+}
+
+
+/* ==========================================================
+   Responsive Adjustments
+   ========================================================== */
+
+@media (max-width: 767px) {
+  .hs-line-14 {
+    font-size: 22px !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .hs-line-14 small {
+    font-size: 45%;
+    margin-top: 10px;
+  }
+
+  #about .lead {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .tpl-minimal-tabs > li > a {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .table > thead > tr > th {
+    font-size: 16px;
+  }
+
+  .table > tbody > tr > td {
+    font-size: 14px;
+    padding: 12px 6px;
+  }
+
+  .contact-form .form-control {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hs-line-14 {
+    font-size: 18px !important;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .section-title::after {
+    width: 40px;
+    margin-top: 15px;
+  }
+
+  #onlineorder .btn-mod.btn-w.btn-round {
+    display: block;
+    margin: 8px auto;
+  }
+}
